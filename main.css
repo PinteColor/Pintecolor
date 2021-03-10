@@ -32,7 +32,6 @@ p{
 /* FRIST PAGE FIRST PAGE FRIST PAGE FIRST PAGE */
 
 #firstScreen{
-    height: 100vh;
     position: relative;
 }
 
@@ -42,7 +41,7 @@ header{
     top: 0;
     padding: 0;
     background-color: #FE5E00;
-    height: 55px;
+    height: 65px;
     display: flex;
     justify-content: space-between;
     box-shadow: 1px 4px 50px rgba(0, 0, 0, 0.4);
@@ -56,9 +55,9 @@ header img{
 .navbar{
     position: fixed;
     top: 0;
-    right: -40vw;
-    background-color: #FE5E00;
-    width: 40vw;
+    right: -60vw;
+    background-color: black;
+    width: 60vw;
     height: 100vh;
     transition: transform .5s ease;
     display: flex;
@@ -84,7 +83,7 @@ nav li a::after{
     content: "";
     width: 100%;
     height: 2px;
-    background-color: black;
+    background-color: #FE5E00;
     position: absolute;
     left: 0;
     bottom: 0;
@@ -101,13 +100,13 @@ nav a{
     color: #DBDBDB;
 }
 nav a:hover{
-    color: black;
+    color: #FE5E00;
     transition: .5s;
 }
 
 .socialMedia-navbar a{
-    margin: 0 .5rem;
-    font-size: 1.2rem;
+    margin: 0 .8rem 0 0;
+    font-size: 1.4rem;
 }
 
 .menuItems{
@@ -118,8 +117,8 @@ nav a:hover{
     position: fixed;
     top: 1rem;
     right: 1.2rem;
-    width: 25px;
-    height: 25px;
+    width: 32.5px;
+    height: 32.5px;
     cursor: pointer;
     background-color: transparent;
     border: transparent;
@@ -136,13 +135,13 @@ nav a:hover{
 }
 
 .active .line-1 {
-    transform: rotateZ(-45deg) translate(-11px, 1px);
+    transform: rotateZ(-45deg) translate(-17px, 2px);
 }
 .active .line-2{
     opacity: 0;
 }
 .active .line-3 {
-    transform: rotateZ(45deg) translate(-11px, 1px);
+    transform: rotateZ(45deg) translate(-13px, 2px);
 }
 
 .productsBtn{
@@ -165,12 +164,11 @@ nav a:hover{
 /* SLIDER SLIDER SLIDER */
 
 .wrapper {
-	height: 70vh;
+	height: 55vh;
 	margin: 2rem auto;
 	width: 100%;
 }
 .slide-wrapper {
-	box-shadow: 5px 5px 20px gray;
 	height: 100%;
 	margin: auto;
 	overflow: hidden;
@@ -231,7 +229,87 @@ nav a:hover{
 	right: 15px;
 }
 
-/* NOSOTROS NOSOTROS NOSOTROS NOSOTROS */
+
+/* SERVICES SERVICES SERVICES SERVICES SERVICES SERVICES */
+
+#services{
+    padding: 1rem;
+}
+
+#services .item{
+    margin-bottom: 1rem;
+}
+
+.title-item{
+    display: inline-block;
+    padding: .5rem 0;
+}
+
+.item{
+    padding: 1.5rem 0;
+}
+
+#services .fas{
+    color: #FE5E00;
+    font-size: 2rem;
+}
+
+/* PRODUCtS PRODUCtS PRODUCtS PRODUCtS PRODUCtS PRODUCtS */
+
+#products{
+    width: 90%;
+    margin: auto;
+    text-align: center;
+}
+
+.productsContainer{
+    margin: 2rem 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.typeOfProduct{
+    background-color: #FE5E00;
+    padding: 0 .5rem;
+    grid-column: 1/3;
+}
+
+.product{
+    border: 1px solid darkgray;
+    position: relative;
+}
+
+.product img{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+  
+.overlay{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #DBDBDB;
+}
+  
+.product:hover .overlay{
+    opacity: 1;
+}
+  
+.productDescription{
+    color: black;
+    font-size: 14px;
+    padding: 1rem;
+}
+
+/* NOSOTROS NOSOTROS NOSOTROS NOSOTROS NOSOTROS NOSOTROS */
 
 #aboutUs{
     background-color: black;
@@ -258,8 +336,13 @@ h2{
     font-size: 2.5rem;
 }
 
-#aboutUs ul li a:hover{
+#aboutUs a{
     color: #DBDBDB;
+}
+
+#aboutUs ul a:hover{
+    color: #FE5E00;
+    transition: .5s;
 }
 
 .aboutUsContent{
