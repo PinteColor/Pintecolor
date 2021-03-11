@@ -287,9 +287,11 @@ nav a:hover{
 }
 
 .typeOfProduct{
+    font-size: 1.5rem;
     background-color: #FE5E00;
-    padding: 0 .5rem;
+    padding: .2rem 0;
     grid-column: 1/3;
+    color: white;
 }
 
 .product{

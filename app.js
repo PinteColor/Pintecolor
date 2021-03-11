@@ -8,7 +8,7 @@ var $slides = $('.slide'),
 
 function setTimer() {
   clearInterval(timer);
-  timer = setInterval(function() { nextSlide() }, 3000);
+  timer = setInterval(function() { nextSlide() }, 4000);
 }
 
 function changeSlide(moveFrom, moveTo, dot, direction) {
