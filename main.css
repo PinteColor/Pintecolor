@@ -37,28 +37,33 @@ p{
 
 header{
     z-index: 9999;
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    width: 100%;
     padding: 0;
-    background-color: #FE5E00;
+    background-color: #2f2f2f;
+    color: #DBDBDB;
     height: 65px;
-    display: flex;
-    justify-content: space-between;
     box-shadow: 1px 4px 50px rgba(0, 0, 0, 0.4);
 }
 
-header img{
-    height: 100%;
-    width: auto;
+header .logo{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
 }
 
 .navbar{
+    z-index: 999;
     position: fixed;
-    top: 0;
+    top: 0px;
     right: -60vw;
-    background-color: black;
+    background-color: #2f2f2f;
     width: 60vw;
-    height: 100vh;
+    height: 100%;
     transition: transform .5s ease;
     display: flex;
     justify-content: space-evenly;
@@ -114,6 +119,7 @@ nav a:hover{
 }
 
 .hamburguer-menu{
+    z-index: 999999;
     position: fixed;
     top: 1rem;
     right: 1.2rem;
@@ -130,7 +136,7 @@ nav a:hover{
 .line{
     width: 100%;
     height: .2rem;
-    background-color: white;
+    background-color: #FE5E00;
     transition: all .8s;
 }
 
@@ -153,27 +159,37 @@ nav a:hover{
     position: relative;
     border: none;
     font-size: 20px;
+    background-color: #FE5E00;
 }
 .productsBtn:hover{
     cursor: pointer;
     color: #DBDBDB;
-    background-color: #FE5E00;
+    background-color: #2f2f2f;
     transition: all .5s;
 }
 
 /* SLIDER SLIDER SLIDER */
 
+.wrapperDos{
+    display: none;
+}
+.wrapperTres{
+    display: none;
+}
+
 .wrapper {
-	height: 55vh;
-	margin: 2rem auto;
-	width: 100%;
+    display:block;
+	height: auto;
+	margin: auto;
+	width: 90%;
+    padding: 110px 0 1rem 0;
 }
 .slide-wrapper {
 	height: 100%;
 	margin: auto;
 	overflow: hidden;
 	text-align: center;
-	width: 90%;
+	width: 100%;
     position: relative;
 }
 .slide {
@@ -206,25 +222,25 @@ nav a:hover{
 	background-color: #FE5E00;
 }
 .arrow {
-	border-bottom: 30px solid transparent;
-	border-top: 30px solid transparent;
+	border-bottom: 20px solid transparent;
+	border-top: 20px solid transparent;
 	display: inline-block;
 	height: 0;
 	width: 0;
 	top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(-70%);
 }
 .arrow:hover {
 	cursor: pointer;
 	opacity: 0.5;
 }
 #arrow-prev {	
-	border-right: 20px solid black;
+	border-right: 15px solid #2f2f2f;
     position: absolute;
 	left: 15px;
 }
 #arrow-next {
-	border-left: 20px solid black;
+	border-left: 15px solid #2f2f2f;
     position: absolute;
 	right: 15px;
 }
@@ -257,6 +273,7 @@ nav a:hover{
 /* PRODUCtS PRODUCtS PRODUCtS PRODUCtS PRODUCtS PRODUCtS */
 
 #products{
+    padding-top: 65px;
     width: 90%;
     margin: auto;
     text-align: center;
@@ -285,7 +302,15 @@ nav a:hover{
     width: 100%;
     height: auto;
 }
+
+.productName{
+    padding: 1rem .2rem;
+}
   
+.img-overlay{
+    position: relative;
+}
+
 .overlay{
     position: absolute;
     top: 0;
@@ -300,7 +325,7 @@ nav a:hover{
 }
   
 .product:hover .overlay{
-    opacity: 1;
+    opacity: .8;
 }
   
 .productDescription{
@@ -312,7 +337,7 @@ nav a:hover{
 /* NOSOTROS NOSOTROS NOSOTROS NOSOTROS NOSOTROS NOSOTROS */
 
 #aboutUs{
-    background-color: black;
+    background-color: #2f2f2f;
     color: #DBDBDB;
 }
 
@@ -353,4 +378,439 @@ h2{
 .paymentsMethods{
     padding: 1rem;
     width: 100%;
+}
+
+@media only screen and (min-width:600px){
+    /* FRIST PAGE FIRST PAGE FRIST PAGE FIRST PAGE */
+
+#firstScreen{
+    position: relative;
+    width: 80%;
+    margin: auto;
+}
+
+header{
+    z-index: 999999;
+    position: fixed;
+    top: 0;
+    left: 10%;
+    padding: 0;
+    background-color: #DBDBDB;
+    width: 80%;
+    margin: auto;
+    height: 65px;
+    box-shadow: 1px 4px 50px rgba(0, 0, 0, 0.4);
+}
+
+header .logo{
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    font-size: 2rem;
+    letter-spacing: 5px;
+    color: #2f2f2f;
+}
+
+.navbar{
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    left: 10%;
+    background-color: transparent;
+    width: 80%;
+    height: 65px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2f2f2f;
+}
+
+.active{
+    visibility: visible;
+    transition: top .5s cubic-bezier(0.5, 0.05, 0.855, 0.06);
+    top: 65px;
+    right: initial;
+}
+
+nav li{
+    position: relative;
+    display: inline;
+    padding: 0 1rem;
+}
+
+
+nav li a::after{
+    content: "";
+    width: 100%;
+    height: 2px;
+    background-color: #FE5E00;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transform: scaleX(0);
+}
+
+nav li a:hover::after{
+    transform-origin: left;
+    transform: scaleX(1);
+    transition: transform .5s;
+}
+
+nav a{
+    color: #DBDBDB;
+}
+nav a:hover{
+    color: #FE5E00;
+    transition: .5s;
+}
+
+.socialMedia-navbar a{
+    margin: 0 .8rem 0 0;
+    font-size: 1.4rem;
+}
+
+.menuItems{
+    font-size: 20px;
+}
+
+.hamburguer-menu{
+    visibility: visible;
+    z-index: 9999999;
+    position: fixed;
+    top: 1rem;
+    right: 11vw;
+    width: 32.5px;
+    height: 32.5px;
+    cursor: pointer;
+    background-color: transparent;
+    border: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.line{
+    width: 100%;
+    height: .2rem;
+    background-color: #FE5E00;
+    transition: all .5s cubic-bezier(0.5, 0.05, 0.855, 0.06);
+}
+
+.active .line .line-1 {
+    transform: rotateZ(-45deg) translate(-17px, 2px);
+}
+.active .line .line-2{
+    opacity: 0;
+}
+.active .line .line-3 {
+    transform: rotateZ(45deg) translate(-13px, 2px);
+}
+
+.productsBtn{
+    padding: 1rem 0;
+    width: 100%;
+    margin: auto;
+    box-shadow: 5px 5px 20px gray;
+    display: block;
+    position: relative;
+    border: none;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: .5rem;
+}
+.productsBtn:hover{
+    cursor: pointer;
+    color: #DBDBDB;
+    background-color: #FE5E00;
+    transition: all .5s;
+}
+
+/* SLIDER SLIDER SLIDER */
+
+/* SLIDER SLIDER SLIDER */
+
+.wrapper {
+    padding: 0;
+    display: inline-block;
+	height: auto;
+	margin: 130px 0 2rem 0;
+	width: 48%;
+}
+.slide-wrapper {
+	height: 100%;
+	margin: auto;
+	overflow: hidden;
+	text-align: center;
+	width: 100%;
+    position: relative;
+}
+.slide {
+	display: none;
+	margin: 0 auto;
+	height: 100%;
+	width: 100%;
+}
+.active-slide {
+	display: inline-block;
+}
+.dot-wrapper {
+	margin: 0 auto;
+	position: relative;
+	top: -30px;
+	width: 80%;
+}
+.dot {
+	background-color:#DBDBDB;
+	border-radius: 50%;
+	display: inline-block;
+	height: 10px;
+	width: 10px;
+}
+.dot:hover {
+	cursor: pointer;
+	opacity: 0.25;
+}
+.active-dot {
+	background-color: #FE5E00;
+}
+.arrow {
+	border-bottom: 30px solid transparent;
+	border-top: 30px solid transparent;
+	display: inline-block;
+	height: 0;
+	width: 0;
+	top: 50%;
+    transform: translateY(-70%);
+}
+.arrow:hover {
+	cursor: pointer;
+	opacity: 0.5;
+}
+#arrow-prev {	
+	border-right: 20px solid #2f2f2f;
+    position: absolute;
+	left: 15px;
+}
+#arrow-next {
+	border-left: 20px solid #2f2f2f;
+    position: absolute;
+	right: 15px;
+}
+
+.wrapperDos{
+    position: absolute;
+    top: 130px;
+    right: 0;
+    display: inline-block;
+    width: 47%;
+}
+
+.starProducts{
+    position: relative;
+    width: 100%;
+    height: 8.5vw;
+    border-top: 1px solid darkgray;
+    border-bottom: 1px solid darkgray;
+}
+
+.wrapperTres{
+    position: absolute;
+    right: 0;
+    bottom: 7.5rem;
+    display: inline-block;
+    width: 47%;
+}
+
+.someProdGrid{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 2rem;
+    padding: 1rem 0 0 0;
+}
+
+.prodImgContainer{
+    position: absolute;
+    bottom: 0;
+}
+
+.prodImgContainer img{
+    width: 100%;
+}
+
+.uno{
+    grid-column: 1/2;
+}
+.dos{
+    grid-column: 2/3;
+}
+.tres{
+    grid-column: 3/4;
+}
+.cuatro{
+    grid-column: 4/5;
+}
+.cinco{
+    grid-column: 5/6;
+}
+
+
+/* SERVICES SERVICES SERVICES SERVICES SERVICES SERVICES */
+
+#services{
+    padding: 1rem;
+}
+
+#service .sectionContent{
+    display: flex;
+}
+
+#services .item{
+    margin-bottom: 1rem;
+}
+
+.title-item{
+    display: inline-block;
+    padding: .5rem 0;
+}
+
+.item{
+    width: 49%;
+    padding: 1rem 0;
+    display: inline-block;
+    text-align: center;
+}
+
+.item .rigth{
+    float: right;
+}
+
+#services .fas{
+    color: #FE5E00;
+    font-size: 2rem;
+}
+
+/* PRODUCtS PRODUCtS PRODUCtS PRODUCtS PRODUCtS PRODUCtS */
+
+#products{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 2rem;
+}
+
+.productsContainer{
+    margin: 4rem 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 2rem;
+}
+
+.typeOfProduct{
+    background-color: #FE5E00;
+    padding: 0 .5rem;
+    grid-column: 1/5;
+}
+
+.product{
+    border: 1px solid darkgray;
+}
+
+.product img{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.productName{
+    padding: 1rem .2rem;
+}
+
+.img-overlay{
+    position: relative;
+}
+
+.overlay{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #DBDBDB;
+}
+  
+.product:hover .overlay{
+    opacity: .8;
+}
+  
+.productDescription{
+    color: black;
+    font-size: 24px;
+    padding: 2rem;
+}
+
+/* NOSOTROS NOSOTROS NOSOTROS NOSOTROS NOSOTROS NOSOTROS */
+
+#aboutUs{
+    position: relative;
+    background-color: #2f2f2f;
+    color: #DBDBDB;
+}
+
+.sectionContent{
+    width: 80%;
+    margin: auto;
+    padding: 2rem 0;
+}
+
+#aboutUs title{
+    padding: 1rem;
+}
+#aboutUs h3, #aboutUs title {
+    color: #FE5E00;
+}
+#aboutUs ul{
+    position: absolute;
+    width: 5%;
+    left: 94%;
+    top: 50%;
+    transform: translateY(-51%);
+    display: initial;
+    justify-content: space-evenly;
+    font-size: 2.5rem;
+}
+
+#aboutUs li{
+    display: block;
+    margin-top: 2rem;
+}
+
+#aboutUs a{
+    color: #DBDBDB;
+}
+
+#aboutUs a:hover{
+    color: #FE5E00;
+    cursor: pointer;
+}
+
+.aboutUsContent{
+    padding: 1rem;
+    border-bottom: 1px solid gray;
+}
+
+.paymentsMethods{
+    padding: 1rem;
+    width: 100%;
+}
+
 }
